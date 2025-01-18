@@ -11,7 +11,7 @@ const Courses = () => {
   const fetchCourses = async () => {
     try {
                                //url to fetch course details from backend
-      const response = await axios.get('http://localhost:5000/api/courses');  
+const response = await axios.get('https://captico-task-courses-back-end.vercel.app/api/courses');
       setCourses(response.data);
     } catch (err) {
       alert('Error fetching courses');
@@ -23,13 +23,19 @@ const Courses = () => {
     try {
       const token = localStorage.getItem('token');
       if (editCourse) {
-        await axios.put(`http://localhost:5000/api/courses/${editCourse._id}`, newCourse, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        await axios.put(`https://captico-task-courses-back-end.vercel.app/api/courses/${editCourse._id}`, newCourse, {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
+
       } else {
-        await axios.post('http://localhost:5000/api/courses', newCourse, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+       await axios.post('https://captico-task-courses-back-end.vercel.app/api/courses', newCourse, {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
+
       }
       fetchCourses();
       setNewCourse({ name: '', description: '', instructor: '' }); // Reset form after adding/editing
@@ -41,10 +47,11 @@ const Courses = () => {
 
   const deleteCourse = async (id) => {
     try {
-      const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/courses/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+     await axios.delete(`https://captico-task-courses-back-end.vercel.app/api/courses/${id}`, {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
       fetchCourses();
     } catch (err) {
       alert('Error deleting course');
