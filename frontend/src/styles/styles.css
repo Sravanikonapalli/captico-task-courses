@@ -9,7 +9,9 @@ form {
   input, button {
     padding: 10px;
   }
-  
+  .h-btn{
+      padding:10px;
+  }
   ul {
     list-style: none;
     padding: 0;
