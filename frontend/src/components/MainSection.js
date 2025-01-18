@@ -10,8 +10,11 @@ const MainSection = () => (
     </p>
     <p className="sub-text">Take control of your learning path by managing your courses. Ready to get started?</p>
     <Link to="/login">
-      <button type="button" className="btn-primary">Get Started</button>
+      <button type="button" className="btn-primary h-btn">Get Started</button>
     </Link>   
+   <Link to="/courses">
+      <button type="button" className="btn-primary">courses</button>
+    </Link>
     </div>
     
   </div>
