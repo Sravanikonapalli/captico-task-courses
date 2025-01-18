@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
       // Send POST request to login API
-      await axios.post('http://localhost:5000/api/auth/login', formData);
+await axios.post('https://captico-task-courses-back-end.vercel.app/api/auth/login', formData);
 
       // Redirect to courses page after successful login
       navigate('/courses');
