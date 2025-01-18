@@ -9,7 +9,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/register', formData); // Send registration data to backend
+await axios.post('https://captico-task-courses-back-end.vercel.app/api/auth/register', formData);
       alert('User registered successfully');
       
       // After successful registration, redirect to login page
@@ -42,6 +42,7 @@ const Register = () => {
         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
       />
       <button type="submit" className='login-btn'>Register</button>
+          <p>Already have an account. login here<p/>
       <button type='button' className='btn'> <a href="/login">Login</a></button>
     </form>
     </div>
