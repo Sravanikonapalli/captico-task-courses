@@ -7,7 +7,7 @@ const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [newCourse, setNewCourse] = useState({ name: '', description: '', instructor: '' });
   const [editCourse, setEditCourse] = useState(null); // State for editing a course
-
+  const token = localStorage.getItem('token')
   const fetchCourses = async () => {
     try {
                                //url to fetch course details from backend
@@ -21,7 +21,6 @@ const Courses = () => {
   const addCourse = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
       if (editCourse) {
         await axios.put(`https://captico-task-courses-back-end.vercel.app/api/courses/${editCourse._id}`, newCourse, {
           headers: {
